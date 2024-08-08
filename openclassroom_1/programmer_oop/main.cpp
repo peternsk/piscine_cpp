@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:01:53 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/08 16:05:46 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/08 16:07:52 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int main(void)
     // std::cout << std::endl;
     // Player marcel("Marcel");
     // marcel.sePresenter();
+
+    // c++ -Wall -Werror -Wextra -std=c++98 main.cpp Vehicule.cpp Voiture.cpp Moto.cpp
 
     Vehicule v;
     v.affiche();    //Affiche "Ceci est un vehicule."
