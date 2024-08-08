@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   personnage.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:06:53 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/07/31 11:16:39 by peternsaka       ###   ########.fr       */
+/*   Updated: 2024/08/08 10:06:09 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,32 @@
 #include <iostream>
 #include <string>
 
-Personnage::Personnage() : m_mana(100), m_vie(100), m_arme("Epee rouiller", 10) {
+// Personnage::Personnage() : m_mana(100), m_vie(100), m_arme("Epee rouiller", 10) {
+// 	std::cout << "construteur launched"  << std::endl;
+// }
+
+Personnage::Personnage() : m_arme(0), m_vie(100), m_mana(100) {
 	std::cout << "construteur launched"  << std::endl;
+	m_arme = new Arme();
 }
 
-Personnage::Personnage(std::string nom_arme, int degat_arme) : m_mana(100), m_vie(100), m_arme(nom_arme, degat_arme){
+// Personnage::Personnage(std::string nom_arme, int degat_arme) : m_mana(100), m_vie(100), m_arme(nom_arme, degat_arme){
+// 	std::cout << "construteur launched"  << std::endl;
+// }
+
+Personnage::Personnage(std::string nom_arme, int degat_arme) : m_mana(100), m_vie(100), m_arme(0){
 	std::cout << "construteur launched"  << std::endl;
+	m_arme = new Arme(nom_arme, degat_arme);
+}
+
+Personnage::Personnage(Personnage const& personnageACopier) 
+	: m_vie(personnageACopier.m_vie), m_mana(personnageACopier.m_mana), m_arme(0){
+		m_arme = new Arme(*(personnageACopier.m_arme));
+	}
+
+Personnage::~Personnage(){
+	std::cout << "deconstruteur launched"  << std::endl;
+	delete m_arme;
 }
 
 void	Personnage::recevoirDegat(int nbDegats){
@@ -61,7 +81,7 @@ bool Personnage::estVivant()
 void	Personnage::afficherEtat(){
 	std::cout << m_vie << std::endl;
 	std::cout << m_mana << std::endl;
-	m_arme.afficher();
+	m_arme->afficher();
 }
 
 
