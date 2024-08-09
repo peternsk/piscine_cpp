@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:01:53 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/09 12:15:29 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/09 12:48:20 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,21 @@
 #include "Vehicule.hpp"
 #include "Voiture.hpp"
 #include "Moto.hpp"
+#include "Camion.hpp"
 #include <string>
 #include <iostream>
+#include <vector>
 
 void presenter(Vehicule const& v){
     v.affiche();
+}
+
+void cleanMemList(std::vector<Vehicule*> list){
+    for(unsigned long i(0); i<list.size(); ++i)
+    {
+        delete list[i];  //On libère la i-ème case mémoire allouée
+        list[i] = 0;  //On met le pointeur à 0 pour éviter les soucis
+    }
 }
 
 int main(void)
@@ -88,5 +98,16 @@ int main(void)
     std::vector<Vehicule*> listVehicules;
     
     listVehicules.push_back(new Voiture(15000, 5));
+    listVehicules.push_back(new Voiture(12000, 3));
+    listVehicules.push_back(new Moto(2000, 212.5));
+    listVehicules.push_back(new Camion(45000, 2013, 2450));
+
+    listVehicules[0]->affiche();
+    listVehicules[1]->affiche();
+    listVehicules[2]->affiche();
+    listVehicules[3]->affiche();
+
+    cleanMemList(listVehicules);
+    
     return 0;
 }
