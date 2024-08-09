@@ -8,10 +8,11 @@
 
 class Moto : public Vehicule{
     public:
-    Moto();
-        void affiche() const;
+        Moto();
+        virtual ~Moto();
+        virtual void affiche() const;
     protected:
-        int m_vitesse;
+        double m_vitesse;
 };
 
 #endif

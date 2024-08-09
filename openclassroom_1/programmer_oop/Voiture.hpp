@@ -9,7 +9,8 @@
 class Voiture : public Vehicule{
     public:
         Voiture();
-        void affiche() const;
+        virtual void affiche() const;
+        virtual ~Voiture();
     protected:
         int m_portes;
 };

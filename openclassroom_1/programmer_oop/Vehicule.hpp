@@ -8,7 +8,8 @@
 class Vehicule {
     public:
         Vehicule();
-        void affiche() const;
+        virtual void affiche() const;
+        virtual ~Vehicule();
     protected:
         int m_prix;
     // private:

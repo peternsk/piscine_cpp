@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:01:53 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/08 16:07:52 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/08 21:25:40 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #include "Moto.hpp"
 #include <string>
 #include <iostream>
+
+void presenter(Vehicule const& v){
+    v.affiche();
+}
 
 int main(void)
 {
@@ -56,11 +60,28 @@ int main(void)
 
     // c++ -Wall -Werror -Wextra -std=c++98 main.cpp Vehicule.cpp Voiture.cpp Moto.cpp
 
+    /*-----------------------------------------------------------------------------*/
+    
+    // Vehicule v;
+    // v.affiche();    //Affiche "Ceci est un vehicule."
+
+    // Moto m;
+    // m.affiche();    //Affiche "Ceci est une moto."
+
+    //----- Virtual & reference -----
     Vehicule v;
-    v.affiche();    //Affiche "Ceci est un vehicule."
+    presenter(v);
 
     Moto m;
-    m.affiche();    //Affiche "Ceci est une moto."
+    presenter(m);
 
+    // -----POINTER-----
+    Vehicule *v1(0);
+    v1 = new Voiture;
+
+    v1->affiche();
+
+    delete v1;
+    
     return 0;
 }
