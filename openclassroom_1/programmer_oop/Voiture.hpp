@@ -8,7 +8,7 @@
 
 class Voiture : public Vehicule{
     public:
-        Voiture();
+        Voiture(int prix, int portes);
         virtual void affiche() const;
         virtual ~Voiture();
     protected:

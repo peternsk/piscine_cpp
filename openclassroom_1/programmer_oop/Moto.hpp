@@ -8,7 +8,7 @@
 
 class Moto : public Vehicule{
     public:
-        Moto();
+        Moto(int prix, double vitesseMax);
         virtual ~Moto();
         virtual void affiche() const;
     protected:

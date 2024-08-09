@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:01:53 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/08 21:25:40 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/09 12:15:29 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,19 +69,24 @@ int main(void)
     // m.affiche();    //Affiche "Ceci est une moto."
 
     //----- Virtual & reference -----
-    Vehicule v;
-    presenter(v);
+    // Vehicule v;
+    // presenter(v);
 
-    Moto m;
-    presenter(m);
+    // Moto m;
+    // presenter(m);
 
     // -----POINTER-----
-    Vehicule *v1(0);
-    v1 = new Voiture;
+    // Vehicule *v1(0);
+    // v1 = new Voiture;
 
-    v1->affiche();
+    // v1->affiche();
 
-    delete v1;
+    // delete v1;
+
+    /*------------------------------------------------------------------------------*/
+
+    std::vector<Vehicule*> listVehicules;
     
+    listVehicules.push_back(new Voiture(15000, 5));
     return 0;
 }

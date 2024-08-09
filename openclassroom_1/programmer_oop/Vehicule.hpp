@@ -7,7 +7,7 @@
 
 class Vehicule {
     public:
-        Vehicule();
+        Vehicule(int prix);
         virtual void affiche() const;
         virtual ~Vehicule();
     protected:
