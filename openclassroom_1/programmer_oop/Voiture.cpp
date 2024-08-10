@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Voiture.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 15:53:54 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/08/09 12:08:26 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/09 15:35:05 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,10 @@ Voiture::~Voiture(){
 
 void Voiture::affiche() const
 {
-     std::cout << "Ceci est une voiture avec " << m_portes << " portes et coutant " << m_prix << " euros." << std::endl;
+	std::cout << "--------------------------------------------------------------------------" << std::endl;
+	std::cout << "|TYPE: Voiture | PRIX(euro): " << m_prix << "| NB PORTES: " << m_portes  << std::endl;
+}
+
+int Voiture::getNbRoue() const{
+	return 4;
 }
