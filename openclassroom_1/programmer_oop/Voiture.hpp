@@ -10,6 +10,7 @@ class Voiture : public Vehicule{
     public:
         Voiture(int prix, int portes);
         virtual void affiche() const;
+		virtual int getNbRoue() const;
         virtual ~Voiture();
     protected:
         int m_portes;

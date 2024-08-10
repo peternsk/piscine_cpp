@@ -6,18 +6,12 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:01:53 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/09 22:20:29 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/09 23:52:32 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "Duree.hpp"
-#include "Vehicule.hpp"
-#include "Voiture.hpp"
-#include "Moto.hpp"
-#include "Camion.hpp"
-#include <string>
-#include <iostream>
-#include <vector>
+#include "Headers.hpp"
 
 void presenter(Vehicule const& v){
     v.affiche();
@@ -39,9 +33,9 @@ int main(void)
 
     // if(duree1 > duree2)
     //     std::cout << "duree 1 plus grand" << std::endl;
-    // else 
+    // else
     //     std::cout << "duree 1 n'est pas plus grand" << std::endl;
-    
+
     // Duree res, duree1(1, 45, 50), duree2(1, 15, 50);
 
     // duree1.afficher();
@@ -53,12 +47,12 @@ int main(void)
     // std::cout << " donne " << std::endl;
     // // duree1.afficher();
 
-    // res =  duree1 + duree2; 
-    
+    // res =  duree1 + duree2;
+
     // res.afficher();
 
     // Duree duree1(2, 25, 28), duree2(0, 16, 33);
-    
+
     // std::cout << duree1 << " et " << duree2 << std::endl;
 
 
@@ -71,7 +65,7 @@ int main(void)
     // c++ -Wall -Werror -Wextra -std=c++98 main.cpp Vehicule.cpp Voiture.cpp Moto.cpp
 
     /*-----------------------------------------------------------------------------*/
-    
+
     // Vehicule v;
     // v.affiche();    //Affiche "Ceci est un vehicule."
 
@@ -95,22 +89,32 @@ int main(void)
 
     /*------------------------------------------------------------------------------*/
 
-    std::vector<Vehicule*> listVehicules;
+//     std::vector<Vehicule*> listVehicules;
 
-    Vehicule v(1000);
-    v.affiche();
+//    Moto m(3245, 900);
+//    m.affiche();
     
-    listVehicules.push_back(new Voiture(15000, 5));
-    listVehicules.push_back(new Voiture(12000, 3));
-    listVehicules.push_back(new Moto(2000, 212.5));
-    listVehicules.push_back(new Camion(45000, 2013, 2450));
+// 	Garage point_s;
 
-    listVehicules[0]->affiche();
-    listVehicules[1]->affiche();
-    listVehicules[2]->affiche();
-    listVehicules[3]->affiche();
+//     listVehicules.push_back(new Voiture(15000, 5));
+//     listVehicules.push_back(new Voiture(12000, 3));
+//     listVehicules.push_back(new Moto(2000, 212.5));
+//     listVehicules.push_back(new Camion(45000, 2013, 2450));
 
-    cleanMemList(listVehicules);
+// 	point_s.afficheInventaire(listVehicules);
+
+//     cleanMemList(listVehicules);
+    /*------------------------------------------------------------------------------*/
+
+    Metstat::maMethode();
+
+    Metstat x1;
+    Metstat x2;
+    Metstat x3;
+    Metstat x4;
+    Metstat x5;
+    
+    std::cout << "il y a : " << Metstat::nbInstance() << std::endl;
     
     return 0;
 }

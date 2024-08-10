@@ -11,6 +11,7 @@ class Moto : public Vehicule{
         Moto(int prix, double vitesseMax);
         virtual ~Moto();
         virtual void affiche() const;
+		virtual int getNbRoue() const;
     protected:
         double m_vitesse;
 };
