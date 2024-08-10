@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:01:53 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/09 12:48:20 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/09 22:20:29 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,9 @@ int main(void)
     /*------------------------------------------------------------------------------*/
 
     std::vector<Vehicule*> listVehicules;
+
+    Vehicule v(1000);
+    v.affiche();
     
     listVehicules.push_back(new Voiture(15000, 5));
     listVehicules.push_back(new Voiture(12000, 3));

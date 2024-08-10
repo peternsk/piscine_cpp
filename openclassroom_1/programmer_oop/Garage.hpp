@@ -10,8 +10,8 @@ class Garage {
     public:
         Garage();
         ~Garage();
-        void addVehicule();
-        void remVehicule();
+        void addVehicule(std::vector<Vehicule*> list);
+        void remVehicule(std::vector<Vehicule*> list);
         void afficheInventaire(std::vector<Vehicule*> list);
     protected:
         std::vector<Vehicule*> list;
