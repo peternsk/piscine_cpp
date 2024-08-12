@@ -10,7 +10,7 @@ class Metstat {
         ~Metstat();
 
         static void maMethode();
-        int nbInstance();
+        static int nbInstance();
     private:
         static int compteur;
 };

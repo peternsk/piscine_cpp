@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MetStat.cpp                                        :+:      :+:    :+:   */
+/*   Time.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 23:01:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/08/12 12:48:25 by pnsaka           ###   ########.fr       */
+/*   Created: 2024/08/12 13:27:22 by pnsaka            #+#    #+#             */
+/*   Updated: 2024/08/12 13:50:33 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MetStat.hpp"
+#include "Time.hpp"
 
-//Initialiser l'attribut en dehors de toute fonction ou classe (espace global)
-int Metstat::compteur = 0;
-
-Metstat::Metstat(){
-    compteur++;
-} 
-
-Metstat::~Metstat(){
-    compteur--;
+Time::Time(int heures, int minutes, int secondes) 
+    : m_heures(heures), m_minutes(minutes), m_secondes(secondes){
 }
 
-void Metstat::maMethode(){
-    std::cout << "Test 1..2..3.." << std::endl;
+void Time::afficher(std::ostream &out) const
+{
+    out << m_heures << "h" << m_minutes << "m" << m_secondes << "s";
 }
 
-int Metstat::nbInstance(){
-    return compteur;
+std::ostream &operator<<( std::ostream &out, Time const& time )
+{
+    time.afficher(out) ;
+    return out;
 }

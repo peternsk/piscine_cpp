@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:01:53 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/09 23:52:32 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/12 12:38:45 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,11 @@ int main(void)
     Metstat x3;
     Metstat x4;
     Metstat x5;
+    Metstat x6;
+    Metstat x7;
+    Metstat x8;
+    Metstat x9;
+    Metstat x10;
     
     std::cout << "il y a : " << Metstat::nbInstance() << std::endl;
     
