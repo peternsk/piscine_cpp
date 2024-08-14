@@ -1,6 +1,8 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#include <string>
+#include <iostream>
 #include "Contact.hpp"
 
 /*====================================================*/
@@ -14,12 +16,13 @@
 /*====================================================*/
 
 class PhoneBook {
-	private:
-		Contact list[8];
 	public:
-	//ADD method
-	//EXIT method
-	//SEARCH method
+		PhoneBook();
+		void ADD();
+		void EXIT();
+		void SEARCH();
+	private:
+		// Contact list[8];
 };
 
 void	prog_image();
