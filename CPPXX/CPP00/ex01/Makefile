@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+         #
+#    By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/24 13:21:42 by peternsaka        #+#    #+#              #
-#    Updated: 2024/07/24 13:37:33 by peternsaka       ###   ########.fr        #
+#    Updated: 2024/08/14 11:59:17 by pnsaka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,16 @@ CC		= c++
 
 FLAG	= -Wall -Werror -Wextra -std=c++98
 
-RM		= rm - fr
+RM		= rm -rf
 
 SRC		= $(shell find . -iname "*.cpp")
 
-OBJ		= $(SRC:.c=.o)
+OBJ		= $(SRC:.cpp=.o)
 
 $(NAME) : $(OBJ)
 		$(CC) $(FLAG) $(OBJ) -o $(NAME)
 
-all :
-		$(NAME)
+all :	$(NAME)
 
 clean :
 		$(RM) $(OBJ)

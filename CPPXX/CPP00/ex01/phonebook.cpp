@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:38:58 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/13 14:47:50 by peternsaka       ###   ########.fr       */
+/*   Updated: 2024/08/14 14:39:46 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,28 @@ void	prog_image(){
 PhoneBook::PhoneBook(){
 }
 
+PhoneBook::PhoneBook(int size) : m_size(size) {
+}
+
 void PhoneBook::ADD(){
 	std::cout << "Adding contact in phonebook " << std::endl;
+	
+	std::cout << "Enter contact first name : ";
+	PhoneBook::list[m_size].setFirst();
+	std::cout << std::endl;
+	std::cout << "Enter contact last name : ";
+	PhoneBook::list[m_size].setLast();
+	std::cout << std::endl;
+	std::cout << "Enter contact nick name : ";
+	PhoneBook::list[m_size].setNick();
+	std::cout << std::endl;
+	std::cout << "Enter contact phone number : ";
+	PhoneBook::list[m_size].setPhone();
+	std::cout << std::endl;
+	std::cout << "Enter contact darkest secret : ";
+	PhoneBook::list[m_size].setSecret();
+	std::cout << std::endl;
+
 }
 
 void PhoneBook::EXIT(){
