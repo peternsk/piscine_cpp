@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:10:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/14 14:38:33 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/14 15:03:42 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ bool allAlpha(std::string s){
 		if(isalpha(s[i]) == 0)
 			return false;
 	}
-	
+	return true;
 }
 
 bool allNum(std::string s){
@@ -30,10 +30,11 @@ bool allNum(std::string s){
 		if(s[i] <= '0' || s[i] >= '9')
 			return false;
 	}
+	return true;
 }
 
 
-bool Contact::setFirst(){
+void Contact::setFirst(){
 	
 	while(!std::cin.eof())
 	{	
@@ -43,17 +44,17 @@ bool Contact::setFirst(){
 	}
 }
 
-bool Contact::setLast(){
+void Contact::setLast(){
 	
 	while(!std::cin.eof())
 	{
 		std::getline(std::cin, this->m_last);
 		if(this->m_last.size() == 0 || allAlpha(this->m_first ) == false)
-			return(false);
+			break;
 	}
 }
 
-bool Contact::setNick(){
+void Contact::setNick(){
 	
 	while(!std::cin.eof())
 	{
@@ -63,7 +64,7 @@ bool Contact::setNick(){
 	}
 }
 
-bool Contact::setPhone(){
+void Contact::setPhone(){
 	
 	while(!std::cin.eof())
 	{
@@ -73,12 +74,13 @@ bool Contact::setPhone(){
 	}
 }
 
-bool Contact::setSecret(){
+void Contact::setSecret(){
 	
 	while(!std::cin.eof())
 	{
-	std::getline(std::cin, this->m_secret);
-	if(this->m_secret.size() == 0)
-		break;
+		std::getline(std::cin, this->m_secret);
+		if(this->m_secret.size() == 0)
+			break;
+		std::cout << "contact added ! please press \" ENTER \" " << std::endl;
 	}
 }
