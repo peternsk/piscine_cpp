@@ -19,9 +19,13 @@ class PhoneBook {
 	public:
 		PhoneBook();
 		PhoneBook(int size);
+
 		void ADD();
 		void EXIT();
 		void SEARCH();
+
+		void printContactList();
+		void showContact(int index);
 	private:
 		Contact list[8];
 		int m_size;

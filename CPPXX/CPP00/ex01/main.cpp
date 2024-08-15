@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:51:17 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/14 15:16:36 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/15 00:23:02 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 	while(ON)
 	{
 		std::cout << "Entre a command : " ;
-		std::cin >> command;
+		std::getline(std::cin, command);
 		if(command == "ADD" || command == "SEARCH" || command == "EXIT"){
 			if(command == "ADD"){
 				book.ADD();
