@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:38:58 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/15 09:25:44 by peternsaka       ###   ########.fr       */
+/*   Updated: 2024/08/15 12:22:03 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ PhoneBook::PhoneBook(int size) : m_size(size) {
 
 void PhoneBook::ADD(){
 
-	if(PhoneBook::m_size > 7)
+	if(PhoneBook::m_size > 8)
 		PhoneBook::m_size = 0;
 
 	std::cout << "Enter contact first name : " << std::endl;
@@ -51,13 +51,16 @@ void PhoneBook::ADD(){
 }
 
 void PhoneBook::printContactList(){
-	std::cout << " ------------ ------------ ------------ ------------ "<< std::endl;
-	std::cout << "|INDEX       |FIRST NAME  |LAST NAME   |NICK NAME   | "<< std::endl;
-	std::cout << " ------------ ------------ ------------ ------------ "<< std::endl;
+	std::cout << " ---------- ---------- ---------- ---------- "<< std::endl;
+	std::cout << "|INDEX     |FIRST NAME|LAST NAME |NICK NAME | "<< std::endl;
+	std::cout << " ---------- ---------- ---------- ---------- "<< std::endl;
 
-	for(int i = 0; i < m_size; i++){
-		std::cout << "|" << PhoneBook::list[i].getIndex() << "           |" << PhoneBook::list[i].getFirst() << "       |" << PhoneBook::list[i].getLast()  << "       |" << PhoneBook::list[i].getNick() <<  "           |" << std::endl;
-		std::cout << " ------------ ------------ ------------ ------------ "<< std::endl;
+	for(int i = 0; i < 8; i++){
+		std::cout << "|" << std::setw(10) << i << "|" << 
+		std::setw(10) << PhoneBook::list[i].getFirst() << "|" << 
+		std::setw(10) << PhoneBook::list[i].getLast() << "|" <<
+		std::setw(10) << PhoneBook::list[i].getNick() << "|" << std::endl;
+		std::cout << " ---------- ---------- ---------- ---------- "<< std::endl;
 	}
 }
 
@@ -76,9 +79,9 @@ void PhoneBook::SEARCH(){
 
 	PhoneBook::printContactList();
 	std::cout << " enter the index of the contact to be displayed" << std::endl;
-	std::cin >> index;
+	std::getline(std::cin, index);
 	rIndex = std::atoi(index.c_str());
-	if(rIndex >= 0 && rIndex <= 7){ //
+	if((rIndex >= 1 && rIndex <= 8) && (rIndex > 0 && rIndex <= m_size)){ 
 		PhoneBook::showContact(rIndex);
 	}
 	else{
