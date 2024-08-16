@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:38:58 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/15 12:22:03 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/15 20:23:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ void PhoneBook::printContactList(){
 	std::cout << " ---------- ---------- ---------- ---------- "<< std::endl;
 
 	for(int i = 0; i < 8; i++){
-		std::cout << "|" << std::setw(10) << i << "|" << 
-		std::setw(10) << PhoneBook::list[i].getFirst() << "|" << 
-		std::setw(10) << PhoneBook::list[i].getLast() << "|" <<
-		std::setw(10) << PhoneBook::list[i].getNick() << "|" << std::endl;
+		std::cout << "|" << std::setw(10) << std::setiosflags(std::ios::left) << i << "|" << 
+		std::setw(10) << std::setiosflags(std::ios::left) << PhoneBook::list[i].getFirst() << "|" << 
+		std::setw(10) << std::setiosflags(std::ios::left) << PhoneBook::list[i].getLast() << "|" <<
+		std::setw(10) << std::setiosflags(std::ios::left) << PhoneBook::list[i].getNick() << "|" << std::endl;
 		std::cout << " ---------- ---------- ---------- ---------- "<< std::endl;
 	}
 }
