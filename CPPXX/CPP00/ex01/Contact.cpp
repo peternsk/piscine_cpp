@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:10:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/08/15 11:03:59 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/15 14:14:49 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ void Contact::setFirst(){
 	while(!std::cin.eof())
 	{
 		std::getline(std::cin, this->m_first);
-		std::cout << this->m_first << std::endl;
 		if(this->m_first.size() == 0 || allAlpha(this->m_first ) == false){
-			std::cout << "EMPTY FIRST" << std::endl;
 			break;
 		}
 	}
@@ -52,9 +50,7 @@ void Contact::setLast(){
 	while(!std::cin.eof())
 	{
 		std::getline(std::cin, this->m_last);
-		std::cout << this->m_last << std::endl;
 		if(this->m_last.size() == 0 || allAlpha(this->m_first ) == false){
-			std::cout << "EMPTY LAST" << std::endl;
 			break;
 		}
 	}
@@ -65,9 +61,7 @@ void Contact::setNick(){
 	while(!std::cin.eof())
 	{
 	std::getline(std::cin, this->m_nick);
-	std::cout << this->m_nick << std::endl;
 	if(this->m_nick.size() == 0 || allAlpha(this->m_first ) == false)
-		std::cout << "EMPTY NICK" << std::endl;
 		break;
 	}
 }
@@ -77,9 +71,7 @@ void Contact::setPhone(){
 	while(!std::cin.eof())
 	{
 		std::getline(std::cin, this->m_phone);
-		std::cout << this->m_phone << std::endl;
 		if(this->m_phone.size() == 0 || allNum(this->m_first ) == false){
-			std::cout << "EMPTY PHONE" << std::endl;
 			break;
 		}
 	}
@@ -90,9 +82,7 @@ void Contact::setSecret(){
 	while(!std::cin.eof())
 	{
 		std::getline(std::cin, this->m_secret);
-		std::cout << this->m_secret << std::endl;
 		if(this->m_secret.size() == 0){
-			std::cout << "EMPTY SECRECT" << std::endl;
 			break;
 		}
 		std::cout << "contact added ! please press \" ENTER \" " << std::endl;
