@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:41:16 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/08/22 13:42:08 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/22 15:23:37 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,13 @@ void    progInfo(std::string &fileName, std::string &s1, std::string &s2){
     std::cin >> s2;
 }
 
-void    searchNReplace(std::ifstream &file,std::string &s1, std::string &s2){
+void    searchNReplace(std::string &fileName, std::ifstream &file,std::string &s1, std::string &s2){
     
-    std::ofstream outfile ("file.replace");
-    outfile.open("file.replace", std::ios_base::app);
+    std::ofstream outfile;
+
+    std::string newFile = (fileName + ".replace");
+    
+    outfile.open(newFile);
     if(outfile.fail())
 	{
 		std::cout << "Input file opening failed.\n";
@@ -46,15 +49,22 @@ void    searchNReplace(std::ifstream &file,std::string &s1, std::string &s2){
     std::string tmpLine;
     std::size_t found = 0;
     
-    while(!std::getline(file, tmpLine))
+    while(std::getline(file, tmpLine))
     {
-        found = tmpLine.find(s1, found);
-        if(found == tmpLine.find(s1, found) && found <= tmpLine.size()){
+        while(found != std::string::npos){
+            found = tmpLine.find(s1, found);
+            
+            if(found == std::string::npos)
+                break;
+            
             tmpLine.erase(found, s1.length());
             tmpLine.insert(found, s2);
             found += s2.length();
         }
+        found = 0;
         outfile << tmpLine;
+        if(file.peek() !=  std::ifstream::traits_type::eof())
+            outfile << std::endl;
         std::cout << tmpLine << std::endl;
     }
 }

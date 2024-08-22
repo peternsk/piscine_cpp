@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:49:20 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/08/22 13:37:04 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/22 15:13:31 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
     
     progBanner();
     progInfo(fileName, s1, s2);
-    searchNReplace(fin, s1, s2);
+    searchNReplace(fileName, fin, s1, s2);
 
     fin.close();
 }
