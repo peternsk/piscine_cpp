@@ -5,31 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 22:00:01 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/08/22 09:20:46 by pnsaka           ###   ########.fr       */
+/*   Created: 2024/08/23 08:33:18 by pnsaka            #+#    #+#             */
+/*   Updated: 2024/08/23 13:23:38 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
 int main(void)
 {
-    {
-        Weapon club = Weapon("crude spiked club");
-        
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club"); 
-        bob.attack();
+    Harl harl;
+    std::string lvl;
+    
+    printBanner();
+    std::cout << "Enter your complain level : " ;
+    std::cin >> lvl;
+    
+    if(lvl == "DEBUG" || lvl == "INFO" || lvl == "WARNING" || lvl == "ERROR" ){
+        harl.complain(lvl);
     }
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.attack();
-        jim.setWeapon(club);
-        club.setType("some other type of club");
-        jim.attack();
+    else {
+        std::cout << "INVALID COMPLAIN LEVEL..." << std::endl;
     }
-    return (0);
+    return 0;    
 }

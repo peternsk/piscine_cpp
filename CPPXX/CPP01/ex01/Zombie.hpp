@@ -12,6 +12,7 @@ class Zombie
         ~Zombie();
         
         void annonce();
+        void setName(std::string name);
 
     private:
         std::string m_name;

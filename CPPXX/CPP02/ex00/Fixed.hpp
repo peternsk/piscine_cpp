@@ -7,13 +7,17 @@
 class Fixed
 {
     public:
-        Fixed(/* args */);
-        Fixed(/* args */);
-        Fixed(/* args */);
+        Fixed();
+        Fixed(Fixed const& FixedToCopie);
+        Fixed(int m_entier);
         ~Fixed();
 
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
+
     private:
-        /* data */
+        int entier;
+        static const int entConst = 8;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 09:48:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/08/21 10:29:53 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/21 15:07:07 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ void Zombie::annonce(){
    std::cout << Zombie::m_name << " : " << "BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie*    zombieHorde( int N, std::string name ){
-    Zombie *horde  = new Zombie[N];
-    
-    for(int i = 0; i < N; i++){
-        horde[i].    
-    }
+void Zombie::setName(std::string name){
+    m_name = name;
 }
+
+Zombie*    zombieHorde( int N, std::string name );

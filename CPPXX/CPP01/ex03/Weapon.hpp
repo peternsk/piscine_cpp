@@ -7,6 +7,7 @@
 class Weapon
 {
     public:
+        Weapon(); 
         Weapon(std::string nType); 
         ~Weapon();
     

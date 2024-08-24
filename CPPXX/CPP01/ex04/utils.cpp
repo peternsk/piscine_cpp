@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:41:16 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/08/22 15:23:37 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/08/22 21:32:53 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void    searchNReplace(std::string &fileName, std::ifstream &file,std::string &s
         outfile << tmpLine;
         if(file.peek() !=  std::ifstream::traits_type::eof())
             outfile << std::endl;
-        std::cout << tmpLine << std::endl;
+        // std::cout << tmpLine << std::endl;
     }
 }
 
