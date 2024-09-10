@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:33:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/10 14:55:52 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/10 15:10:06 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,8 +144,8 @@ Fixed& Fixed::operator--(){
 }
 
 Fixed  Fixed::operator++(int){
-    Fixed tmp(entier);
-    entier++;
+    Fixed tmp = *this;
+    ++entier;
     return tmp;
 }
 
