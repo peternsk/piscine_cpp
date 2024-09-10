@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:33:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/09 12:16:49 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/10 00:18:45 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,25 @@ Fixed::Fixed(Fixed const& FixedToCopie){
     std::cout << "Copy constructor called" << std::endl;
     this->entier = FixedToCopie.getRawBits();
 }
+
+Fixed::Fixed(int const n){
+    std::cout << "Int constructor called" << std::endl;
+    this->entier = n << this->entConst;
+}
+
+Fixed::Fixed(float const n){
+    std::cout << "Float constructor called" << std::endl;
+    this->entier = round(n * (1 << this->entConst));
+}
+
+float Fixed::toFloat( void ) const{
+    return((float)this->entier / (float)(1 << this->entConst));
+}
+
+int Fixed::toInt( void ) const{
+    return (this->entier >> this->entConst);
+}
+
 
 Fixed::~Fixed(){
     std::cout << "Destructor called" << std::endl;
