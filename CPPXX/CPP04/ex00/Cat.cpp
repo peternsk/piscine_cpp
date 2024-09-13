@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 22:15:16 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/11 23:20:51 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/12 23:05:16 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ Cat::Cat(){
 Cat::~Cat(){  
 }
 
-void Cat::makeSound(){
+void Cat::makeSound() const{
     std::cout << "miaou miaou miaou" << std::endl;
 }
 
-std::string Cat::getType(){
-    return this->type;
-}
+// std::string Cat::getType(){
+//     return this->type;
+// }

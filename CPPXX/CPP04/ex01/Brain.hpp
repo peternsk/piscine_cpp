@@ -7,6 +7,11 @@
 
 class Brain {
     public:
+        Brain();
+        Brain(Brain const& objBrain);
+        
+        ~Brain();
+        Brain& operator=(const Brain& objBrain);
 
     protected:
         std::string idea[100];

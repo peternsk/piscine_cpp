@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:33:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/10 00:18:45 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/10 10:24:12 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,13 @@ Fixed& Fixed::operator=(const Fixed& C){
     return *this;
 }
 
+std::ostream& operator<<(std::ostream &output, Fixed const& obj){
+
+    output << obj.toFloat();
+    return output; 
+}
+
+
 int Fixed::getRawBits( void ) const{
     std::cout << "getRawBits member function called" << std::endl;
     return this->entier;
@@ -59,5 +66,5 @@ int Fixed::getRawBits( void ) const{
 
 void Fixed::setRawBits( int const raw ){
     std::cout << "setRawBits member function called" << std::endl;
-    entier = raw;
+    this->entier = raw;
 }

@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:06:29 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/10 15:03:13 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/11 10:28:57 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,19 @@
 
 int main( void )
 {
-    Fixed i(5), j;
-
-    std::cout << i.getRawBits() << ", " << j.toInt() << std::endl;
+    Fixed a;
+    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
     
-    j = ++i;
     
-    std::cout << i.toInt() << ", " << j.toInt() << std::endl;
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << b << std::endl;
+    
+    // std::cout << Fixed::max( a, b ) << std::endl;
     
     return 0; 
 }

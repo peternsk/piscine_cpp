@@ -11,8 +11,8 @@ class Cat : public Animal {
         Cat();
         ~Cat();
         
-        void makeSound();
-        std::string getType();
+        void makeSound() const;
+        // std::string getType();
         
 };
 

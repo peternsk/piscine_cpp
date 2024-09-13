@@ -10,8 +10,8 @@ class Dog : public Animal {
         Dog();
         ~Dog();
 
-        void makeSound();
-        std::string getType();
+        void makeSound() const;
+        // std::string getType();
 
 };
 

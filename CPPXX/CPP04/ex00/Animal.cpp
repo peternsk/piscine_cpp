@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:58:40 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/11 23:18:45 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/12 23:05:10 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ Animal::Animal(){
 Animal::~Animal(){
 }
 
-void Animal::makeSound(){
+void Animal::makeSound() const{
     std::cout << "its not a specific type..." << std::endl;
 }
 
-std::string Animal::getType(){
+std::string Animal::getType() const{
     return this->type;
 }

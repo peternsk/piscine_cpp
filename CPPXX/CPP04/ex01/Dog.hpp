@@ -3,16 +3,19 @@
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
+#include "header.hpp"
 
 class Dog : public Animal {
     public:
         Dog();
+        Dog(Cat const& objGog)
+
         ~Dog();
+        Dog& operator=(const Brain& objCat);
 
         void makeSound() const;
-        // std::string getType();
-
+    private:
+        Brain *m_brain;
 };
 
 #endif

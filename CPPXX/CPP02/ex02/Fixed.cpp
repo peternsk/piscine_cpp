@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:33:45 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/10 15:10:06 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/11 10:13:51 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,18 @@
 /*------------------------------------------------------*/
 
 Fixed::Fixed(){
-    std::cout << "Default constructor called" << std::endl;
     entier = 0;
 }
 
 Fixed::Fixed(Fixed const& FixedToCopie){
-    std::cout << "Copy constructor called" << std::endl;
     this->entier = FixedToCopie.getRawBits();
 }
 
 Fixed::Fixed(int const n){
-    std::cout << "Int constructor called" << std::endl;
     this->entier = n << this->entConst;
 }
 
 Fixed::Fixed(float const n){
-    std::cout << "Float constructor called" << std::endl;
     this->entier = round(n * (1 << this->entConst));
 }
 
@@ -41,7 +37,6 @@ Fixed::Fixed(float const n){
 /*------------------------------------------------------*/
 
 Fixed::~Fixed(){
-    std::cout << "Destructor called" << std::endl;
 }
 
 /*------------------------------------------------------*/
@@ -64,12 +59,10 @@ Fixed& Fixed::operator=(const Fixed& C){
 }
 
 int Fixed::getRawBits( void ) const{
-    std::cout << "getRawBits member function called" << std::endl;
     return this->entier;
 }
 
 void Fixed::setRawBits( int const raw ){
-    std::cout << "setRawBits member function called" << std::endl;
     this->entier = raw;
 }
 
@@ -134,24 +127,26 @@ Fixed Fixed::operator / (const Fixed& obj) const{
 /*************** INCR . OVERLOAD ***************/
 
 Fixed& Fixed::operator++(){
-    entier++;
+    ++this->entier;
     return *this;
 }
 
 Fixed& Fixed::operator--(){
-    entier--;
+    --this->entier;
     return *this;
 }
 
 Fixed  Fixed::operator++(int){
     Fixed tmp = *this;
-    ++entier;
+    this->entier++;
     return tmp;
 }
 
-// Fixed  Fixed::operator--(int){
-    
-// }
+Fixed  Fixed::operator--(int){
+    Fixed tmp = *this;
+    this->entier--;
+    return tmp;
+}
 
 
 /*------------------------------------------------------*/

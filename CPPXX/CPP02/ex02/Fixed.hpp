@@ -44,7 +44,7 @@ class Fixed
         Fixed& operator++();        //  prefix
         Fixed& operator--();        //  prefix
         Fixed  operator++(int);     //  postfix
-        // Fixed  operator--(int);     //  postfix
+        Fixed  operator--(int);     //  postfix
 
     private:
         int entier;

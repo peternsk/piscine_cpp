@@ -28,4 +28,6 @@ class Fixed
         static const int entConst = 8;
 };
 
+std::ostream& operator<<(std::ostream &output, Fixed const& obj);
+
 #endif
