@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+         #
+#    By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/16 13:37:24 by pnsaka            #+#    #+#              #
-#    Updated: 2024/09/16 15:43:06 by pnsaka           ###   ########.fr        #
+#    Updated: 2024/09/17 10:16:20 by peternsaka       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= bureaucrate
+NAME	= Bureaucrate
 
 CC		= c++
 
@@ -33,7 +33,7 @@ all :	$(NAME)
 
 pdf :
 		open $(MOD_PDF)
-	
+
 openclass:
 		open $(OPEN_CLA)
 clean :
@@ -44,4 +44,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY:		all clean fclean re 
+.PHONY:		all clean fclean re
