@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <exception>
 
 class Bureaucrat {
     public:
@@ -11,7 +12,7 @@ class Bureaucrat {
 
 
         Bureaucrat& operator=(const Bureaucrat& objBur);
-        std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bur);
+        // std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bur);
 
         void        setGrade();
         std::string getName();
@@ -19,8 +20,27 @@ class Bureaucrat {
         void        increase();
         void        decrease();
 
-		void 		GradeTooHighException();
-		void 		GradeTooLowException();
+        class GradeTooHighException : public std::exception{
+            public:
+                virtual const char* what() const throw(){
+                    return "ERROR : Grade too high";
+                }
+        };
+
+        class GradeTooLowException : public std::exception{
+            public:
+                virtual const char* what() const throw(){
+                    return "ERROR : Grade too low";
+                }
+        };
+
+        class UnableToInit : public std::exception{
+            public:
+                virtual const char* what() const throw(){
+                    return "ERROR : Cannot init this bureaucrat...";
+                }
+        };
+
     private:
         std::string const name;
         int         grade;
