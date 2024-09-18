@@ -12,11 +12,12 @@ class Bureaucrat {
 
 
         Bureaucrat& operator=(const Bureaucrat& objBur);
-        // std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bur);
 
-        void        setGrade();
-        std::string getName();
-        int         getGrade();
+        std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bur);
+
+        void        setGrade(int m_grade);
+        std::string getName() const;
+        int         getGrade() const;
         void        increase();
         void        decrease();
 

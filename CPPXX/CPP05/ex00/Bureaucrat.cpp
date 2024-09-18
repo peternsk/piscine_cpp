@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 08:27:02 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/09/17 14:00:56 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/17 20:45:21 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ Bureaucrat::Bureaucrat(std::string m_name, int m_grade) : name(m_name), grade(m_
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const& objBur){
-
+	this->name = objBur.getName();
+	this->setGrade(objBur.grade);
 }
 
 Bureaucrat::~Bureaucrat(){
@@ -44,36 +45,47 @@ Bureaucrat::~Bureaucrat(){
 /****   OVERLOADING OPERATOR    ***********************************************/
 /******************************************************************************/
 
-// Bureaucrat& Bureaucrat::operator=(const Bureaucrat& objBur){
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& objBur){
+	if(this->grade != objBur.grade){
+		grade = objBur.grade;
+	}
+	return *this;
+}
 
-// }
-
-// std::ostream& Bureaucrat::operator<<(std::ostream& os, const Bureaucrat& Bur){
-
-// }
+std::ostream& Bureaucrat::operator<<(std::ostream& os, const Bureaucrat& Bur){
+	os << Bur.getName() << " bureaucrat grade " << Bur.getGrade() <<
+}
 
 /******************************************************************************/
 /****          METHODS          ***********************************************/
 /******************************************************************************/
 
-void        Bureaucrat::setGrade(){
-
+void        Bureaucrat::setGrade(int m_grade){
+	this->grade = m_grade;
+	if(this->grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if(this->grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
-std::string Bureaucrat::getName(){
-
+std::string Bureaucrat::getName() const{
+	return this->name;
 }
 
-int         Bureaucrat::getGrade(){
-
+int         Bureaucrat::getGrade() const{
+	return this->grade;
 }
 
 void        Bureaucrat::increase(){
-
+	this->grade--;
+	if(this->grade < 1)
+		throw Bureaucrat::GradeTooHighException();
 }
 
 void        Bureaucrat::decrease(){
-
+	this->grade++;
+	if(this->grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 
