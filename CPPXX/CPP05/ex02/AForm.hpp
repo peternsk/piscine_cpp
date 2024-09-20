@@ -24,7 +24,7 @@ class AForm {
         bool isFormSign();
         std::string FormStatus() const;
 
-        virtual void execute(Bureaucrat const & executor) = 0; //virtual pure
+        virtual void execute(Bureaucrat const & executor)const = 0; //virtual pure
         class GradeTooHighException : public std::exception{
             public:
                 virtual const char* what() const throw(){
