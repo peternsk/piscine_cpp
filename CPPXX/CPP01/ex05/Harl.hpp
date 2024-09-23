@@ -10,16 +10,16 @@ class Harl
         Harl();
         ~Harl();
 
-        void debug(void);
-        void info(void);
-        void warning(void);
-        void error(void);
 
         int  retPos(std::string level, std::string levelArr[4]);
         void complain(std::string level);
 
     private:
         // int levelFunc;
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
 };
 
 void printBanner();

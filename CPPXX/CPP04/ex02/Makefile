@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/16 13:37:24 by pnsaka            #+#    #+#              #
-#    Updated: 2024/09/19 02:01:49 by pnsaka           ###   ########.fr        #
+#    Created: 2024/09/12 23:15:52 by pnsaka            #+#    #+#              #
+#    Updated: 2024/09/16 12:44:40 by pnsaka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 28B
+NAME	= abstraite
 
 CC		= c++
 
@@ -22,20 +22,11 @@ SRC		= $(shell find . -iname "*.cpp")
 
 OBJ		= $(SRC:.cpp=.o)
 
-MOD_PDF = https://cdn.intra.42.fr/pdf/pdf/95639/fr.subject.pdf
-
-OPEN_CLA = https://openclassrooms.com/fr/courses/7137751-programmez-en-oriente-objet-avec-c/7532931-gerez-des-erreurs-avec-les-exceptions
-
 $(NAME) : $(OBJ)
 		$(CC) $(FLAG) $(OBJ) -o $(NAME)
 
 all :	$(NAME)
 
-pdf :
-		open $(MOD_PDF)
-
-openclass:
-		open $(OPEN_CLA)
 clean :
 		$(RM) $(OBJ)
 

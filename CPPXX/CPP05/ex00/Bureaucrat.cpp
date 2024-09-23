@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 08:27:02 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/09/17 20:45:21 by peternsaka       ###   ########.fr       */
+/*   Updated: 2024/09/19 00:50:57 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #pragma once
 #include "Bureaucrat.hpp"
 #include <exception>
+#include <iostream>
+#include <string>
 
 
 /******************************************************************************/
@@ -32,12 +34,10 @@ Bureaucrat::Bureaucrat(std::string m_name, int m_grade) : name(m_name), grade(m_
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const& objBur){
-	this->name = objBur.getName();
-	this->setGrade(objBur.grade);
+	*this = objBur;
 }
 
 Bureaucrat::~Bureaucrat(){
-
 }
 
 
@@ -52,9 +52,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& objBur){
 	return *this;
 }
 
-std::ostream& Bureaucrat::operator<<(std::ostream& os, const Bureaucrat& Bur){
-	os << Bur.getName() << " bureaucrat grade " << Bur.getGrade() <<
-}
 
 /******************************************************************************/
 /****          METHODS          ***********************************************/
@@ -102,4 +99,9 @@ void printBanner(){
 	std::cout << std::endl;
 	std::cout << "      | WELCOME TO THE BUREAUCRATIC NIGHTMARE |" << std::endl;
 	std::cout << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bur){
+	os << Bur.getName() << ", bureaucrat grade " << Bur.getGrade();
+	return os;
 }

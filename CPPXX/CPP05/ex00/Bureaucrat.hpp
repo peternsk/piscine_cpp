@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
 
 class Bureaucrat {
     public:
@@ -13,7 +14,6 @@ class Bureaucrat {
 
         Bureaucrat& operator=(const Bureaucrat& objBur);
 
-        std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bur);
 
         void        setGrade(int m_grade);
         std::string getName() const;
@@ -48,3 +48,5 @@ class Bureaucrat {
 };
 
 void	printBanner();
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bur);

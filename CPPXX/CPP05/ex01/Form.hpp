@@ -4,11 +4,12 @@
 #include <stdbool.h>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 
 class Form {
     public:
         Form();
-        Form(const Form& cpy);
+        Form(Form const& cpy);
         Form(std::string m_name, int m_gradeSign, int m_gradeExecute);
 
         Form& operator=( const Form& objForm);
@@ -16,10 +17,12 @@ class Form {
         ~Form();
 
         std::string getName() const;
-        std::string getGradeToSign() const;
-        std::string getGradeToExecute() const;
+        int getGradeToSign() const;
+        int getGradeToExecute() const;
         
         void beSigned(Bureaucrat &Bur);
+        bool isFormSign();
+        std::string FormStatus() const;
         class GradeTooHighException : public std::exception{
             public:
                 virtual const char* what() const throw(){
@@ -38,6 +41,13 @@ class Form {
             public:
                 virtual const char* what() const throw(){
                     return "ERROR : Attribute aren't initialize proprely...";
+                }
+        };
+
+         class FormAlreadySigned : public std::exception{
+            public:
+                virtual const char* what() const throw(){
+                    return "ERROR : Form is already sighred";
                 }
         };
 

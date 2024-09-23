@@ -1,43 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 21:58:40 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/16 11:42:40 by pnsaka           ###   ########.fr       */
+/*   Created: 2024/09/11 22:33:27 by pnsaka            #+#    #+#             */
+/*   Updated: 2024/09/16 13:08:25 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
+#include "Dog.hpp"
+
 
 /***********************************/
 /**** CONSTROCTOR & DESTRUCTOR  ****/
 /***********************************/
 
-Animal::Animal(){
-    std::cout << "Animal dcefault constructor called" << std::endl;
-    this->type = "n_type";
+Dog::Dog(){
+    std::cout << "Dog dcefault constructor called" << std::endl;
+    this->type = "Dog";
+    m_brain = new Brain;
 }
 
-Animal::Animal(Animal const& animalCopy){
-    std::cout << "Animal copy constructor called" << std::endl;
-    this->type = animalCopy.getType();
+Dog::Dog(Cat const& objDog){
+    std::cout << "Dog copy constructor called" << std::endl;
+    this->type = objDog.getType();
 }
 
-Animal::~Animal(){
-    std::cout << "Animal destructor called" << std::endl;
+Dog::~Dog(){
+    std::cout << "Dog destructor called" << std::endl;
+    delete m_brain; 
 }
 
 /***********************************/
 /****   OVERLOADING OPERATOR    ****/
 /***********************************/
 
-Animal& Animal::operator=(const Animal& objAnimal){
-    if (this != &objAnimal) {
-        type = objAnimal.type;
-    }
+Dog& Dog::operator=(const Dog& objCat){
+    delete m_brain;
+    this->m_brain = new Brain (*objCat.getBrain());
     return *this;
 }
 
@@ -45,10 +48,10 @@ Animal& Animal::operator=(const Animal& objAnimal){
 /****          METHODS          ****/
 /***********************************/
 
-void Animal::makeSound() const{
-    std::cout << "its not a specific type..." << std::endl;
+void Dog::makeSound() const{
+    std::cout << "wouf wouf wouf" << std::endl;
 }
 
-std::string Animal::getType() const{
-    return this->type;
+Brain* Dog::getBrain(void) const{
+    return this->m_brain; 
 }

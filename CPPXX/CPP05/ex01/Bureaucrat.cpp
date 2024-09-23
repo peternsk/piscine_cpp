@@ -6,12 +6,13 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 08:27:02 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/09/18 13:59:44 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/19 01:17:50 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #pragma once
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <exception>
 #include <iostream>
 #include <string>
@@ -83,6 +84,13 @@ void        Bureaucrat::decrease(){
 	this->grade++;
 	if(this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void		Bureaucrat::signForm(Form &form){
+	if(form.isFormSign() == true)
+		std::cout << this->getName() << "signed" << form.getName() << std::endl;
+	else
+		std::cout << this->getName() << "couldn't sign" << form.getName() << "because his grade is too low" <<  std::endl;
 }
 
 
