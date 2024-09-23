@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <stdbool.h>
+#include <fstream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -13,13 +14,13 @@ class AForm {
         AForm(std::string m_name, int m_gradeSign, int m_gradeExecute);
 
         AForm& operator=( const AForm& objForm);
-        
+
         ~AForm();
 
         std::string getName() const;
         int getGradeToSign() const;
         int getGradeToExecute() const;
-        
+
         void beSigned(Bureaucrat &Bur);
         bool isFormSign();
         std::string FormStatus() const;
@@ -38,7 +39,7 @@ class AForm {
                     return "ERROR : Grade too low";
                 }
         };
-        
+
          class CannotInitForm : public std::exception{
             public:
                 virtual const char* what() const throw(){
@@ -53,6 +54,13 @@ class AForm {
                 }
         };
 
+		class FormNotSigned : public std::exception{
+            public:
+                virtual const char* what() const throw(){
+                    return "ERROR : cannot execute this form without a signature";
+                }
+        };
+
     private:
         std::string const name;
         bool    formSigned;
@@ -60,4 +68,4 @@ class AForm {
         int     const gradeToExecute;
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& obj);
+std::ostream& operator<<(std::ostream& os, const AForm& obj);

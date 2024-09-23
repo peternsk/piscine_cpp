@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 09:04:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/09/20 13:39:55 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/09/21 22:20:57 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class ShrubberyCreationForm : public AForm {
         ~ShrubberyCreationForm();
 
         ShrubberyCreationForm& operator=( const ShrubberyCreationForm &obj);
-        
-        void execute(Bureaucrat const & executor);
-        
+
+        void execute(Bureaucrat const & executor) const;
+
     private:
 };
