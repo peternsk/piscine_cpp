@@ -27,6 +27,7 @@ class PhoneBook {
 
 		void printContactList();
 		void showContact(int index);
+		std::string croped(std::string str);
 	private:
 		Contact list[8];
 		int m_size;
